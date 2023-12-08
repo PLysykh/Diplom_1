@@ -7,6 +7,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.mockito.Mockito.times;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -28,14 +29,14 @@ public class BunTest {
     public void getEmptyNameTest(){
         name = "";
         String resultName = bun.getName();
-        assertEquals(null, resultName);
+        assertNull(resultName);
     }
 
     @Test
     public void getNullNameTest(){
         name = null;
         String resultName = bun.getName();
-        assertEquals(null, resultName);
+        assertNull(resultName);
     }
 
     @Test
@@ -47,6 +48,13 @@ public class BunTest {
 
     @Test
     public void getPriceTest() {
+        float resultPrice = bun.getPrice();
+        assertEquals(price, resultPrice, 0);
+    }
+
+    @Test
+    public void getEmptyPriceTest(){
+        price = 0;
         float resultPrice = bun.getPrice();
         assertEquals(price, resultPrice, 0);
     }
